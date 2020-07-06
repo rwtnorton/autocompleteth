@@ -14,15 +14,16 @@ func NewTrie() *Trie {
 	}
 }
 
-func (trie *Trie) Insert(s string) *Node {
+func (tr *Trie) Insert(s string) *Node {
 	runes := []rune(s)
-	currNode := trie.Root
+	currNode := tr.Root
 	for _, r := range runes {
-		currNode, isNew := currNode.AddChild(r)
+		var isNew bool
+		currNode, isNew = currNode.AddChild(r)
 		if isNew {
-			nodes, found := trie.Runes[r]
+			nodes, found := tr.Runes[r]
 			if !found {
-				trie.Runes[r] = []*Node{currNode}
+				tr.Runes[r] = []*Node{currNode}
 			} else {
 				nodes = append(nodes, currNode)
 			}

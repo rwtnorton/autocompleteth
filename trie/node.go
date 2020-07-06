@@ -14,7 +14,7 @@ type Node struct {
 
 func NewNode(r rune) *Node {
 	return &Node{
-		Rune: r,
+		Rune:     r,
 		Children: make(map[rune]*Node),
 	}
 }
