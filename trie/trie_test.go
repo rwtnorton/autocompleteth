@@ -31,4 +31,53 @@ func TestInsert(t *testing.T) {
 			t.Errorf("expected child 'c' Node, found=%t, bNode=%v", found, cNode)
 		}
 	}
+
+	{
+		trie.Insert("foo")
+
+		fNode, found := trie.Root.Children['f']
+		if !found || fNode == nil {
+			t.Errorf("expected top-level 'f' Node, found=%t, fNode=%v", found, fNode)
+		}
+		oNode1, found := fNode.Children['o']
+		if !found || oNode1 == nil {
+			t.Errorf("expected child 'o' Node, found=%t, oNode=%v", found, oNode1)
+		}
+		oNode2, found := oNode1.Children['o']
+		if !found || oNode2 == nil {
+			t.Errorf("expected grandchild 'o' Node, found=%t, oNode=%v", found, oNode2)
+		}
+	}
+
+}
+
+func TestRunes(t *testing.T) {
+	tr := NewTrie()
+	tr.Insert("foo")
+	tr.Insert("bar")
+	tr.Insert("baz")
+
+	// fmt.Println(tr.showRunes())
+
+	testCases := []struct{
+		r rune
+		count int
+	}{
+		{'a', 1},
+		{'b', 1},
+		{'f', 1},
+		{'o', 2},
+		{'r', 1},
+		{'z', 1},
+	}
+	for i, testCase := range testCases {
+		if len(tr.Runes[testCase.r]) != testCase.count {
+			t.Errorf("%d: expected Runes[%c] be have len %d, got %d", i, testCase.r, testCase.count, len(tr.Runes[testCase.r]))
+		}
+		for _, runeNode := range tr.Runes[testCase.r] {
+			if runeNode.Rune != testCase.r {
+				t.Errorf("%d: expected Node to have Rune %c, got %c", i, testCase.r, runeNode.Rune)
+			}
+		}
+	}
 }
