@@ -13,7 +13,11 @@ func Parse(input string) []string {
 	}
 	var results = make([]string, 0, len(captures))
 	for _, capture := range captures {
-		results = append(results, capture[1])
+		s := capture[1]
+		if s == `'` {
+			continue
+		}
+		results = append(results, s)
 	}
 	return results
 }

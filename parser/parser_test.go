@@ -32,10 +32,9 @@ func TestParse(t *testing.T) {
 			input: "  But yield them up where I myself must render-",
 			expected: []string{"But", "yield", "them", "up", "where", "I", "myself", "must", "render"},
 		},
-		// A compromise
 		{
 			input: "  '\"O then advance of yours that phraseless hand",
-			expected: []string{"'", "O", "then", "advance", "of", "yours", "that", "phraseless", "hand"},
+			expected: []string{"O", "then", "advance", "of", "yours", "that", "phraseless", "hand"},
 		},
 	}
 	for i, testCase := range testCases {
