@@ -3,7 +3,7 @@ package trie
 type Trie struct {
 	Root  *Node
 	Runes map[rune][]*Node
-	Words []*Node // TODO
+	Words []*Node
 }
 
 func NewTrie() *Trie {
@@ -30,5 +30,6 @@ func (tr *Trie) Insert(s string) *Node {
 		}
 	}
 	currNode.Count += 1
+	tr.Words = append(tr.Words, currNode)
 	return currNode
 }
