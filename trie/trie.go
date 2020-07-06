@@ -3,7 +3,7 @@ package trie
 type Trie struct {
 	Root  *Node
 	Runes map[rune][]*Node
-	Words []*Node
+	Words []*Node // TODO
 }
 
 func NewTrie() *Trie {
