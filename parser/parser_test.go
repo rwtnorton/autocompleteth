@@ -17,23 +17,23 @@ func TestParse(t *testing.T) {
 		{"foo'", []string{"foo'"}},
 		{"foo'bar", []string{"foo'bar"}},
 		{
-			input: "  That thereby beauty's rose might never die,",
+			input:    "  That thereby beauty's rose might never die,",
 			expected: []string{"That", "thereby", "beauty's", "rose", "might", "never", "die"},
 		},
 		{
-			input: "  Feed'st thy light's flame with self-substantial fuel,",
+			input:    "  Feed'st thy light's flame with self-substantial fuel,",
 			expected: []string{"Feed'st", "thy", "light's", "flame", "with", "self-substantial", "fuel"},
 		},
 		{
-			input: "    Which used lives th' executor to be.",
+			input:    "    Which used lives th' executor to be.",
 			expected: []string{"Which", "used", "lives", "th'", "executor", "to", "be"},
 		},
 		{
-			input: "  But yield them up where I myself must render-",
+			input:    "  But yield them up where I myself must render-",
 			expected: []string{"But", "yield", "them", "up", "where", "I", "myself", "must", "render"},
 		},
 		{
-			input: "  '\"O then advance of yours that phraseless hand",
+			input:    "  '\"O then advance of yours that phraseless hand",
 			expected: []string{"O", "then", "advance", "of", "yours", "that", "phraseless", "hand"},
 		},
 	}
