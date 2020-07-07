@@ -62,3 +62,49 @@ func (node *Node) Word() []rune {
 	}
 	return results
 }
+
+func prewalk(node *Node) []*Node {
+	var results []*Node
+	stack := []*Node{node}
+	for len(stack) > 0 {
+		currNode := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		results = append(results, currNode)
+		for _, child := range currNode.Children {
+			if child != nil {
+				stack = append(stack, child)
+			}
+		}
+	}
+	return results
+}
+
+func (node *Node) findWordNodes() []*Node {
+	var results []*Node
+	descendants := prewalk(node)
+	for _, n := range descendants {
+		if n == nil || n.Count <= 0 {
+			continue
+		}
+		results = append(results, n)
+	}
+	return results
+}
+
+func (node *Node) MatchTerm(term string) []*Node {
+	runes := []rune(term)
+	if len(runes) == 0 {
+		return nil
+	}
+	if runes[0] != node.Rune {
+		return nil
+	}
+	currNode := node
+	for _, r := range runes[1:] {
+		currNode = currNode.Children[r]
+		if currNode == nil {
+			return nil
+		}
+	}
+	return currNode.findWordNodes()
+}

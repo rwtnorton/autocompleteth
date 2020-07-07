@@ -59,8 +59,8 @@ func TestRunes(t *testing.T) {
 
 	// fmt.Println(tr.showRunes())
 
-	testCases := []struct{
-		r rune
+	testCases := []struct {
+		r     rune
 		count int
 	}{
 		{'a', 1},
