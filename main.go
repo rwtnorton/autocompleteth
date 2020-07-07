@@ -80,6 +80,9 @@ func autocompleteHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	wordCounts := trie.MostFrequentWordsMatching(term, count)
+	if wordCounts == nil {
+		wordCounts = []WordCount{}
+	}
 	body := struct {
 		Matches []WordCount `json:"matches"`
 	}{wordCounts}
