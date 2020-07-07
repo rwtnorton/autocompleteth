@@ -81,3 +81,21 @@ func TestRunes(t *testing.T) {
 		}
 	}
 }
+
+func TestWords(t *testing.T) {
+	tr := NewTrie()
+	nodes := []*Node{
+		tr.Insert("foo"),
+		tr.Insert("bar"),
+		tr.Insert("baz"),
+	}
+
+	for i, node := range nodes {
+		if tr.Words[i] != node {
+			t.Errorf("%d: expected Word node %p, got %p", i, node, tr.Words[i])
+		}
+		if tr.Words[i].Count <= 0 {
+			t.Errorf("%d: expected Count of Word node to be > 0, got %d", i, tr.Words[i].Count)
+		}
+	}
+}
