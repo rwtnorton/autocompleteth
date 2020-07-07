@@ -5,21 +5,7 @@ the works of Shakespeare.
 
 ## Usage
 
-```
-  $ go get github.com/rwtnorton/autocompleteth
-```
-
-Running the server using `$GOBIN`:
-```
-  $ $GOBIN/autocompleteth
-```
-
-Running the server using `$GOPATH`:
-```
-  $ $GOPATH/bin/autocompleteth
-```
-
-Alternatively, clone the repo, build, and run:
+Clone the repo, build, and run:
 ```
   $ git clone git@github.com:rwtnorton/autocompleteth.git
   $ cd autocompleteth
