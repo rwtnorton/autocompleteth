@@ -1,9 +1,9 @@
-= Autocompleteth
+# Autocompleteth
 
 Go web service that provides autocompletion of terms, drawn from
 the works of Shakespeare.
 
-== Usage
+## Usage
 
 ```
   $ go get github.com/rwtnorton/autocompleteth
@@ -37,6 +37,6 @@ Optionally, there are some tests, which are exercised in the usual way:
   $ go test -count=1 ./...
 ```
 
-== Author
+## Author
 
-Richard W. Norton <rwtnorton@gmail.com>
+Richard W. Norton, <rwtnorton@gmail.com>

@@ -1,6 +1,6 @@
-= Results
+# Results
 
-== Term ar
+## Term ar
 ```
 {
   "matches": [
@@ -108,7 +108,7 @@
 }
 ```
 
-== Term fr
+## Term fr
 ```
 {
   "matches": [
@@ -216,7 +216,7 @@
 }
 ```
 
-== Term il
+## Term il
 ```
 {
   "matches": [
@@ -324,7 +324,7 @@
 }
 ```
 
-== Term ne
+## Term ne
 ```
 {
   "matches": [
@@ -432,7 +432,7 @@
 }
 ```
 
-== Term pi
+## Term pi
 ```
 {
   "matches": [
@@ -540,7 +540,7 @@
 }
 ```
 
-== Term pl
+## Term pl
 ```
 {
   "matches": [
@@ -648,7 +648,7 @@
 }
 ```
 
-== Term se
+## Term se
 ```
 {
   "matches": [
@@ -756,7 +756,7 @@
 }
 ```
 
-== Term sh
+## Term sh
 ```
 {
   "matches": [
@@ -864,7 +864,7 @@
 }
 ```
 
-== Term th
+## Term th
 ```
 {
   "matches": [
@@ -972,7 +972,7 @@
 }
 ```
 
-== Term wu
+## Term wu
 ```
 {
   "matches": []
